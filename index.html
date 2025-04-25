@@ -3,26 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Retro 2000s Website!</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #FFFF00;
-            color: #FF00FF;
-            font-family: 'Book Antiqua', serif;
-        }
-        h1 {
-            color: #0000FF;
-        }
-       
-    </style>
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+
 </head>
 <body>
-    <h1>My 2000s Vibes</h1>
-    <p>This website is a tribute to the golden days of the early internet!</p>
-    <img src="https://media.giphy.com/media/JdLVl78V9p9Re/giphy.gif" alt="Sparkles" />
-    <footer>
-        <p>Created by Your Name | Email me at: <a href="mailto:example@example.com">example@example.com</a></p>
-    </footer>
+
+    <div id="weather-widget" style="position: fixed; top: 10px; right: 10px; background-color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+        <div id="weather-location">Loading...</div>
+        <div id="weather-info">Fetching weather...</div>
+    </div>
+
+    <div class="welcome-container">
+        <h1>Welcome</h1>
+    </div>
+
+    <div class="dropdown-container">
+        <div class="dropdown">
+            <button class="dropdown-btn">Dropdown 1</button>
+            <div class="dropdown-content">
+                <a href="#">Sub-link 1</a>
+                <a href="#">Sub-link 2</a>
+                <a href="#">Sub-link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Dropdown 2</button>
+            <div class="dropdown-content">
+                <a href="#">Sub-link 1</a>
+                <a href="#">Sub-link 2</a>
+                <a href="#">Sub-link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Dropdown 3</button>
+            <div class="dropdown-content">
+                <a href="#">Sub-link 1</a>
+                <a href="#">Sub-link 2</a>
+                <a href="#">Sub-link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Dropdown 4</button>
+            <div class="dropdown-content">
+                <a href="#">Sub-link 1</a>
+                <a href="#">Sub-link 2</a>
+                <a href="#">Sub-link 3</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for toggling the dropdown on click
+        const dropdowns = document.querySelectorAll('.dropdown-btn');
+        
+        dropdowns.forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Prevent the click from propagating to the document
+                event.stopPropagation();
+                
+                // Get the next sibling element (dropdown-content)
+                const dropdownContent = this.nextElementSibling;
+                
+                // Close all other dropdowns first
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    if (content !== dropdownContent) {
+                        content.classList.remove('active');
+                    }
+                });
+                
+                // Toggle the 'active' class to show or hide the clicked dropdown
+                dropdownContent.classList.toggle('active');
+            });
+        });
+    
+        // Close all dropdowns when clicking outside any dropdown button
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.dropdown-content').forEach(content => {
+                content.classList.remove('active');
+            });
+        });
+
+            // Fetching user's location and weather data
+            function getWeather() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+
+                    // OpenWeatherMap API URL
+                    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+                    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+                    fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            const weather = data.weather[0].description;
+                            const temp = data.main.temp;
+                            const location = data.name;
+
+                            // Display the weather data in the widget
+                            document.getElementById('weather-info').innerHTML = `${temp}°C | ${weather}`;
+                            document.getElementById('weather-location').innerHTML = location;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching weather data:', error);
+                            document.getElementById('weather-info').innerHTML = 'Unable to get weather data.';
+                        });
+                });
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+            // Call the function to fetch the weather data
+        getWeather();
+        }
+    </script>
+
+
 </body>
+
 </html>
