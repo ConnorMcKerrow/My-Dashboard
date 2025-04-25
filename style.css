@@ -1,26 +1,122 @@
+/* Variables */
+:root {
+    --primary-color: #3E3F5B; /* Dark text and button color */
+    --secondary-color: #8AB2A6; /* Button hover color */
+    --light-color: #F6F1DE; /* Light background color */
+    --font-family: 'Merriweather', serif; /* Global font family */
+}
+
+/* Base Styles */
 body {
-    background-image: url('https://www.pixelartmaker.com/art/3e70d8f15551f10.gif'); /* Tiled background */
-    background-repeat: repeat;
-    color: #00FFFF;
-    font-family: 'Book Antiqua', serif;
+    background: linear-gradient(90deg, var(--light-color), var(--light-color));
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Welcome Section */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    text-align: center;
+    position: relative;
+}
+
+.welcome-container h1 {
+    font-size: 15vw;
+    font-weight: 700;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Dropdown Menu */
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dropdown {
+    position: relative;
+    margin: 0 5px;
+}
+
+.dropdown-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-family: var(--font-family);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--light-color);
+    min-width: 400px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: var(--primary-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+
+/* Position the weather widget at the top right */
+.weather-widget {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Merriweather', serif;
+    z-index: 1000;
+    width: 200px;
     text-align: center;
 }
 
-h1 {
-    color: #FF1493;  /* Neon Pink */
-    font-size: 3em;
+.weather-widget #weather-info {
+    font-size: 1.2em;
 }
 
-
-footer {
-    background-color: #000000;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-footer a {
-    color: #FF1493;
+.weather-widget #weather-location {
+    font-size: 1em;
+    margin-top: 5px;
+    color: #555;
 }
