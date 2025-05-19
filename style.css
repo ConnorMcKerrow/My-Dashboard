@@ -1,0 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #FFFFFF;
+    font-family: 'Fraunces', serif; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: left;
+    align-items: center;
+    height: 100vh; 
+}
+.center-bottom {
+    transform: translate(25%,-30%);
+  }
+
+  .text-container {
+    text-align: left; 
+}
+  
+h1 {
+    font-size: 3rem; 
+    font-weight: 300;
+    color: #000000; 
+    letter-spacing: -0.08em;
+    line-height: 1.2em;
+}
+
+.highlight {
+    color: #999999;
+}
+
+
+
