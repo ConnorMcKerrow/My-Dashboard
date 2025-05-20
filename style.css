@@ -18,6 +18,24 @@ body {
   .text-container {
     text-align: left; 
 }
+
+.top-right-nav {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.top-right-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.top-right-nav li {
+    display: inline;
+}
   
 h1 {
     font-size: 3rem; 
