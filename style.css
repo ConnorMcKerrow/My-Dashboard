@@ -36,7 +36,21 @@ body {
 .top-right-nav li {
     display: inline;
 }
+
+a:link{
+    text-decoration: none;
+    color: #000000; 
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000000; 
+}
   
+a:hover {
+    text-decoration: underline;
+    color: #000000; 
+}
 h1 {
     font-size: 3rem; 
     font-weight: 300;
