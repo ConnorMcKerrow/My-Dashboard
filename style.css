@@ -64,4 +64,29 @@ h1 {
 }
 
 
-
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: auto;
+        padding: 20px;
+    }
+    .center-bottom {
+        transform: none;
+        margin-top: 60px;
+        width: 100%;
+    }
+    .top-right-nav {
+        position: static;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    h1 {
+        font-size: 2rem;
+        line-height: 1.3em;
+    }
+    .text-container {
+        padding: 0;
+    }
+}
