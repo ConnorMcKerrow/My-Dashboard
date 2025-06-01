@@ -15,6 +15,10 @@ body {
     transform: translate(25%,-30%);
   }
 
+  .centerish-bottom {
+    transform: translate(25%,-20%);
+  }
+
   .text-container {
     text-align: left; 
 }
