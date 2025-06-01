@@ -16,7 +16,8 @@ body {
   }
 
   .centerish-bottom {
-    transform: translate(25%,-20%);
+    margin-left: 80px;
+    margin-top: 40px;
   }
 
   .text-container {
