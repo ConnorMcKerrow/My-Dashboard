@@ -1,61 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;700&display=swap');
 
 body {
     background-color: #FFFFFF;
     font-family: 'Fraunces', serif; 
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    justify-content: left;
-    align-items: center;
-    height: 100vh; 
-}
-.center-bottom {
-    transform: translate(25%,-30%);
-  }
-
-  .centerish-bottom {
-    margin-left: 80px;
-    margin-top: 40px;
-  }
-
-  .text-container {
-    text-align: left; 
 }
 
-.top-right-nav {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-}
-
-.top-right-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.top-right-nav li {
-    display: inline;
-}
-
-a:link{
-    text-decoration: none;
-    color: #000000; 
-}
-
-a:visited {
-    text-decoration: none;
-    color: #000000; 
-}
-  
-a:hover {
-    text-decoration: underline;
-    color: #000000; 
-}
 h1 {
     font-size: 3rem; 
     font-weight: 300;
@@ -64,7 +13,45 @@ h1 {
     line-height: 1.2em;
 }
 
-.highlight {
+.NoScroll{
+    height: 100%;
+    overflow: hidden;
+}
+
+.MainTitle{
+    margin-top: 20rem;
+    margin-left: 10%;
+    margin-bottom: 0;
+}
+
+.AboutPage{
+    margin-top: 10%;
+    margin-left: 10%
+}
+
+.Highlight {
     color: #999999;
 }
 
+.Navbar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: inline;
+}
+
+.NoUnderline{
+    text-decoration: none;
+    color: #000000; 
+}
+
+.NoUnderline:hover {
+    text-decoration: underline;
+    color: #000000; 
+}
+
+
+a:visited {
+    text-decoration: none;
+    color: #000000; 
+}
