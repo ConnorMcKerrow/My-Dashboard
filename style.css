@@ -58,8 +58,6 @@ a:visited {
     color: #000000; 
 }
 
-/* Project Cards? */
-
 .ProjectsGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
